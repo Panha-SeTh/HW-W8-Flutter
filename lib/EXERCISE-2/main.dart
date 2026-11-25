@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'ui/screens/temperature_screen.dart';
 import 'ui/screens/welcome_screen.dart';
  
 class TemperatureApp extends StatefulWidget {
@@ -37,7 +38,9 @@ class _TemperatureAppState extends State<TemperatureApp> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: const WelcomeScreen(),
+          child: showConverter
+              ? TemperatureScreen()
+              : WelcomeScreen(onStart: startConverter),
         ),
       ),
     );
